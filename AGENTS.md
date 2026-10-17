@@ -39,3 +39,14 @@ Do not introduce impostor, infiltrator, deception-based, or similar hidden-decep
 - `docs/requirements.md`: confirmed requirements and open product questions.
 - `docs/architecture.md`: conceptual boundaries and unresolved architecture choices.
 - `docs/technical-decisions.md`: decision status and approval record.
+- `docs/design-integration.md`: screenshot inventory, visual evidence, approximate tokens, component architecture, missing states, and reconstruction phases.
+
+## Approved planning baseline
+
+- Approved stack: React, TypeScript, Vite, Node.js, Express, Socket.IO, SQLite. Additional selections require approval.
+- The only supplied design resources are screenshots in `docs/design/`. Do not assume or search for original Figma code, editable files, components, tokens, or CSS.
+- Reconstruct the screenshot identity; label estimated visual values and proposed missing states clearly.
+- Current MVP includes host authentication, guest code/name access, up to 20 players per room, multiple-choice quizzes, fixed or speed-based scoring, a common question duration, and results/ranking.
+- Host continuity requires a 30-second reconnection wait, 15-second election, election ties resolved by original join order, and a paused game when no votes are cast. See requirements and design documentation for unresolved details.
+- Prefer free/open-source technologies. Do not contract paid services, deploy, or create external resources without authorization.
+- Current authorization remains documentation only; await explicit approval before implementation or dependency installation.

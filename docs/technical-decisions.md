@@ -19,9 +19,9 @@ A confirmed requirement is not the same as a selected implementation. Technology
 
 | ID | Decision | Status | Inputs needed |
 | --- | --- | --- | --- |
-| TD-001 | Technology stack and repository structure | Pending; no stack selected | Hosting constraints, team preferences, expected scale, and owner approval. |
+| TD-001 | Technology stack and repository structure | Stack approved; repository structure proposed | React, TypeScript, Vite, Node.js, Express, Socket.IO, SQLite. See visual integration plan for proposed structure. |
 | TD-002 | Multiplayer transport and state authority | Pending | Interaction timing, consistency expectations, and disconnect behavior. |
-| TD-003 | Persistence and data storage | Pending | Quiz ownership, session history, retention, and identity requirements. |
+| TD-003 | Persistence and data storage | SQLite approved; persistence scope pending | Quiz ownership, session history, retention, and identity requirements. |
 | TD-004 | Authentication and authorization | Pending | Guest access, host permissions, and account requirements. |
 | TD-005 | Room-code strategy and session lifecycle | Pending | Uniqueness scope, capacity, expiration, reuse, and reconnection rules. |
 | TD-006 | Quiz model and game-mode extension contract | Pending | Initial quiz rules, supported question types, and future mode needs. |
@@ -32,7 +32,9 @@ A confirmed requirement is not the same as a selected implementation. Technology
 
 ## Approved technical selections
 
-None yet. The conceptual responsibilities in `architecture.md` are planning guidance, not approved technology selections.
+The project owner explicitly approved React, TypeScript, Vite, Node.js, Express, Socket.IO, and SQLite in the screenshot integration request on 2026-10-17. The preceding architecture proposal motivated this stack with shared TypeScript, reusable UI, bidirectional room communication, and local persistence without a managed database service. Exact versions and additional libraries remain pending. SQLite and a single-server starting point require reassessment if later concurrency/deployment needs exceed that arrangement; no multi-server scaling guarantee is implied.
+
+The same request establishes screenshot-only visual reconstruction and documentation-only authorization. No original Figma resources are available or assumed. See `design-integration.md` for evidence and proposals. No visual library is approved. Authentication details, server authority contracts, persistence lifetime, and hosting remain pending; stack approval alone does not approve every detail of the previous proposal.
 
 ## Future decision record format
 

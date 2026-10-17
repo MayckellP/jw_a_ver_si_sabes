@@ -2,7 +2,9 @@
 
 ## Status
 
-This document describes conceptual responsibilities derived from confirmed requirements. It does not select a technology stack, deployment topology, networking protocol, database, or implementation framework. All such choices require approval.
+The owner has approved React, TypeScript, Vite, Node.js, Express, Socket.IO, and SQLite. Implementation remains unauthorized during the current documentation-only task. Deployment topology, authentication mechanism, detailed data model, and protocol contracts remain pending.
+
+See `design-integration.md` for proposed frontend modules, reusable components, role boundaries, visual reconstruction, and responsive behavior. Proposed client/server/shared boundaries are logical organization, not separate service requirements.
 
 ## Conceptual responsibilities
 
@@ -32,10 +34,10 @@ This sequence illustrates confirmed capabilities; it does not define specific sc
 
 ## Pending architecture decisions
 
-- Frontend and backend technologies, language choices, and repository organization.
+- Exact dependency versions, repository organization, and tooling beyond the approved stack.
 - Multiplayer transport, state authority, synchronization, and reconnection strategy.
 - Room-code generation, collision handling, uniqueness scope, and expiration.
-- Persistence requirements, data model, database, and retention policy.
+- Persistence scope, SQLite data model, and retention policy.
 - Identity, host authorization, player access, and session ownership.
 - Custom quiz representation, validation, storage, and content provenance.
 - Game-mode contracts and session lifecycle states.
@@ -43,4 +45,4 @@ This sequence illustrates confirmed capabilities; it does not define specific sc
 - Hosting, deployment, scaling, monitoring, and operational security controls.
 - Test tooling and approved quality targets.
 
-No item in this list is selected by this document. See `technical-decisions.md` for decision tracking.
+The stack is approved; the remaining details listed above are pending. See `technical-decisions.md` for decision tracking.

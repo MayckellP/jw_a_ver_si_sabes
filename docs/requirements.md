@@ -31,16 +31,31 @@ Impostor, infiltrator, and deception-based mechanics must not be implemented.
 
 The current work is documentation only. Do not install dependencies, generate application code, or scaffold an application. These activities require subsequent authorization.
 
+## Confirmed MVP additions
+
+The owner's current requirements refine the initial scope:
+
+- Responsive home page and host workspace with host authentication.
+- Quiz and multiple-choice question creation and editing.
+- Unique-code rooms for up to 20 players; players join by code and name without accounts.
+- Multiplayer waiting room, real-time synchronized questions, individual phone answers, question results, scores, ranking, and final results.
+- Fixed or speed-based scoring and a common timer duration for all questions; numeric duration and formulas remain pending.
+- Host transfer through voting, with a 30-second reconnection wait and a 15-second vote.
+- Election ties resolved by original join order; no votes leave the game paused.
+- React, TypeScript, Vite, Node.js, Express, Socket.IO, and SQLite are approved.
+- Prioritize free/open-source technologies; no paid services. No deployments or external resource creation without authorization; avoid unnecessary dependencies.
+- Screenshots are the only visual reference. No original source, editable design, tokens, or CSS is available or assumed. See `design-integration.md`.
+
 ## Open product questions
 
 The following are unresolved questions, not approved requirements:
 
-- What question types, answer validation rules, scoring, timers, and progression should the initial quiz mode support?
+- Multiple choice is confirmed; what option limits, answer-change rules, scoring formulas, timer value, and progression controls apply?
 - How are custom quizzes created, edited, stored, owned, imported, or shared?
 - What controls does the host need, and does the host also participate as a player?
-- Do hosts or players need accounts, or can they participate as guests?
-- What are the room capacity, code format, uniqueness scope, expiration, and reuse rules?
-- What happens when a player or host disconnects, reconnects, leaves, or ends a session?
+- How is host authentication provisioned and recovered? Players do not need accounts.
+- Capacity is up to 20 players; does the host count, and how are disconnected slots treated? Code format, uniqueness scope, expiration, and reuse remain pending.
+- Beyond the confirmed 30-second reconnection wait and 15-second election, what candidate eligibility, vote-change, returning-host, pause/resume, and no-vote recovery rules apply?
 - Which Bible translations, references, content sources, and usage permissions apply?
 - Are moderation, participant removal, or quiz visibility controls required?
 - Which browsers, accessibility targets, latency targets, and concurrent-session volumes must be supported?

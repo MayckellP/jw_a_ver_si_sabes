@@ -22,7 +22,9 @@ Source code, identifiers, project structure, technical comments, schemas, API en
 
 ## Current stage
 
-The project is in requirements and architecture documentation. No technology stack has been selected or approved. Dependency installation, application scaffolding, and application code generation are outside the current authorization.
+The project is in visual integration planning. The project owner has approved React, TypeScript, Vite, Node.js, Express, Socket.IO, and SQLite. Dependency installation, application scaffolding, and application code generation remain outside the current authorization.
+
+The only visual resources are 14 screenshots in `docs/design/`. No editable design or original code is available. See `design-integration.md` for the complete visual analysis, requirement comparison, component proposal, and implementation phases.
 
 ## Pending definition
 
