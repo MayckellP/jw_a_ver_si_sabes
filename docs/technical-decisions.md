@@ -12,14 +12,14 @@ A confirmed requirement is not the same as a selected implementation. Technology
 | C-002 | Communicate with the project owner in Spanish. | Project-owner instructions. |
 | C-003 | Use Spanish initially in the interface and support future internationalization. | Project-owner instructions. |
 | C-004 | Support future game modes and exclude deception-based mechanics. | Project-owner instructions. |
-| C-005 | Keep the current stage limited to documentation. | Project-owner instructions. |
+| C-005 | Keep implementation limited to the owner-approved initial foundation phase. | Project-owner instructions. |
 | C-006 | Obtain approval before choosing the technology stack. | Project-owner instructions. |
 
 ## Pending decision register
 
 | ID | Decision | Status | Inputs needed |
 | --- | --- | --- | --- |
-| TD-001 | Technology stack and repository structure | Stack approved; repository structure proposed | React, TypeScript, Vite, Node.js, Express, Socket.IO, SQLite. See visual integration plan for proposed structure. |
+| TD-001 | Technology stack and repository structure | Stack and npm workspace monorepo approved | React, TypeScript, Vite, Node.js, Express, Socket.IO, SQLite. See visual integration plan for proposed structure. |
 | TD-002 | Multiplayer transport and state authority | Pending | Interaction timing, consistency expectations, and disconnect behavior. |
 | TD-003 | Persistence and data storage | SQLite approved; persistence scope pending | Quiz ownership, session history, retention, and identity requirements. |
 | TD-004 | Authentication and authorization | Pending | Guest access, host permissions, and account requirements. |
@@ -47,3 +47,15 @@ For each approved technical decision, record:
 - Approved choice and rationale.
 - Consequences and tradeoffs.
 - Project-owner approval reference.
+
+
+## Initial implementation authorization ? 2026-10-17
+
+The owner explicitly approved local development, dependency installation, an npm workspace monorepo (`apps/web`, `apps/server`, `packages/shared`), TypeScript checks/builds, a minimal Express health endpoint, screenshot-based UI primitives, home/navigation, and a mock host dashboard. This supersedes earlier documentation-only restrictions for this bounded phase. Subsequent phases and deployment still require approval.
+
+- TD-001: React/TypeScript/Vite web application, Node.js/TypeScript/Express service, and shared contracts implemented as npm workspaces. Shared types build before server/web. Dependency versions are locked in `package-lock.json`.
+- Initial implementation choices within the approved stack: native Node.js development launcher, TypeScript compiler, Vite's built-in JSX transformation, and `tsx` for the TypeScript server watch process. No routing, icon, CSS, testing, or process-management library is added.
+- TD-007 remains pending: Spanish strings are isolated in one module as a reversible preparation step; no internationalization library has been adopted.
+- Socket.IO and SQLite remain approved future selections without installed adapters, databases, or game contracts in this phase.
+- The visual dashboard uses screenshot 05 as a workspace skeleton because a separate summary dashboard was not supplied. Five mock cards match the visible examples; no account access is implemented. Search and sorting are local-only.
+- Health contract: `GET /api/health` returns `{ "status": "ok", "service": "jw-app-server" }`. The server binds to loopback and the frontend development server proxies `/api`. This adds no game endpoint or transport protocol.

@@ -2,7 +2,7 @@
 
 ## Status
 
-The owner has approved React, TypeScript, Vite, Node.js, Express, Socket.IO, and SQLite. Implementation remains unauthorized during the current documentation-only task. Deployment topology, authentication mechanism, detailed data model, and protocol contracts remain pending.
+The owner has approved React, TypeScript, Vite, Node.js, Express, Socket.IO, and SQLite. Initial implementation was authorized on 2026-10-17: npm workspaces in apps/web, apps/server, and packages/shared; local frontend foundation and a minimal health endpoint only. Deployment topology, authentication mechanism, detailed data model, and protocol contracts remain pending.
 
 See `design-integration.md` for proposed frontend modules, reusable components, role boundaries, visual reconstruction, and responsive behavior. Proposed client/server/shared boundaries are logical organization, not separate service requirements.
 
@@ -34,7 +34,7 @@ This sequence illustrates confirmed capabilities; it does not define specific sc
 
 ## Pending architecture decisions
 
-- Exact dependency versions, repository organization, and tooling beyond the approved stack.
+- Tooling beyond the initial dependency set; exact installed versions are recorded in package-lock.json.
 - Multiplayer transport, state authority, synchronization, and reconnection strategy.
 - Room-code generation, collision handling, uniqueness scope, and expiration.
 - Persistence scope, SQLite data model, and retention policy.

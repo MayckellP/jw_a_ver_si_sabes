@@ -1,0 +1,20 @@
+import { useState } from 'react';
+import { Brand, Button, Card, Icon } from '../../components/ui';
+import { es } from '../../locales/es';
+
+function GamePreviewIllustration() {
+  return <div className="game-preview" role="img" aria-label={es.previewLabel}>
+    <div className="preview-glow" />
+    <div className="preview-screen"><div className="preview-top"><span><Icon name="spark" />{es.questionProgress}</span><small>{es.live}</small></div><span className="preview-category">{es.quiz}</span><h3>{es.question}</h3><div className="preview-answers">{es.answers.map((answer, index) => <div key={answer} className={index === 1 ? 'selected' : ''}><b>{'ABCD'[index]}</b> {answer}</div>)}</div></div>
+    <div className="connected"><span />{es.connected}</div>
+    <div className="phone phone-answers"><span className="phone-notch"/><small>{es.choose}</small>{['A', 'B', 'C', 'D'].map(letter => <b key={letter}>{letter}</b>)}</div>
+    <div className="phone phone-result"><span className="phone-notch"/><span className="correct-icon"><Icon name="check" /></span><strong>{es.correct}</strong></div>
+  </div>;
+}
+export function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  return <><header className="public-header container"><Brand /><button className="menu-button" aria-label={es.menu} aria-expanded={menuOpen} aria-controls="public-navigation" onClick={() => setMenuOpen(!menuOpen)}><Icon name={menuOpen ? 'close' : 'menu'} /></button><nav id="public-navigation" aria-label={es.navigation} className={menuOpen ? 'public-nav is-open' : 'public-nav'} onClick={() => setMenuOpen(false)}><a href="#/" aria-current="page">{es.home}</a><a href="#games">{es.explore}</a><a href="#how-it-works">{es.how}</a><a className="button button-secondary" href="#/host">{es.panel}</a><Button disabled>{es.create}</Button></nav></header>
+  <main id="main-content" tabIndex={-1}><section className="hero container"><div className="hero-copy"><span className="badge"><Icon name="spark" />{es.heroBadge}</span><h1>{es.heroTitle}<br/><span>{es.heroAccent}</span></h1><p className="hero-description">{es.heroBody}</p><div className="hero-actions"><Button disabled><Icon name="play" />{es.createGame}</Button><Button variant="secondary" disabled>{es.join}<Icon name="arrow" /></Button></div><div className="social-proof"><div className="avatar-stack" aria-hidden="true">{['LU', 'MA', 'SO', 'DA'].map(name => <span key={name}>{name}</span>)}</div><div><strong>{es.together}</strong><small>{es.noDownload}</small></div></div><p className="phase-note">{es.phase}</p></div><GamePreviewIllustration /></section>
+  <section className="steps-section" id="how-it-works"><div className="container section-container"><div className="section-heading"><h2>{es.stepsTitle}</h2><p>{es.stepsBody}</p></div><div className="three-grid">{es.steps.map((step, index) => <Card key={step.title} className="step-card"><span className="icon-tile"><Icon name={step.icon} /></span><span className="step-number">0{index + 1}</span><h3>{step.title}</h3><p>{step.body}</p></Card>)}</div></div></section>
+  <section className="modes-section container section-container" id="games"><span className="eyebrow">{es.modes}</span><h2>{es.modesTitle}</h2><p>{es.modesBody}</p><div className="featured-game"><div><span className="feature-label">● {es.inDevelopment}</span><h2>{es.quiz}</h2><p>{es.quizBody}</p><div className="feature-tags">{[es.players, es.custom, es.multipleChoice].map(text => <span key={text}>{text}</span>)}</div><a href="#/host" className="button button-secondary">{es.viewQuizzes}<Icon name="arrow" /></a></div><div className="feature-art" aria-hidden="true"><Icon name="book"/><span>?</span></div></div><div className="three-grid">{es.upcoming.map(mode => <Card key={mode.title} className="upcoming-card"><span className="icon-tile"><Icon name={mode.icon}/></span><span className="upcoming-badge">{es.soon}</span><h3>{mode.title}</h3><p>{mode.body}</p></Card>)}</div></section></main><footer className="public-footer"><div className="container"><Brand/><p>{es.tagline}</p><small>{es.prototype}</small></div></footer></>;
+}

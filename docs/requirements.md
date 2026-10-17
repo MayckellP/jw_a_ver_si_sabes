@@ -29,7 +29,7 @@ Impostor, infiltrator, and deception-based mechanics must not be implemented.
 
 ## Current delivery constraints
 
-The current work is documentation only. Do not install dependencies, generate application code, or scaffold an application. These activities require subsequent authorization.
+On 2026-10-17 the owner authorized initial implementation and required dependencies: local npm workspace foundation, shared TypeScript contracts, an Express health endpoint, responsive home/navigation, and a mock host workspace. Authentication, persistent quizzes, multiplayer logic/events, scoring, timers, host elections, and deployment are excluded until subsequent approval.
 
 ## Confirmed MVP additions
 

@@ -49,4 +49,4 @@ Do not introduce impostor, infiltrator, deception-based, or similar hidden-decep
 - Current MVP includes host authentication, guest code/name access, up to 20 players per room, multiple-choice quizzes, fixed or speed-based scoring, a common question duration, and results/ranking.
 - Host continuity requires a 30-second reconnection wait, 15-second election, election ties resolved by original join order, and a paused game when no votes are cast. See requirements and design documentation for unresolved details.
 - Prefer free/open-source technologies. Do not contract paid services, deploy, or create external resources without authorization.
-- Current authorization remains documentation only; await explicit approval before implementation or dependency installation.
+- The owner authorized the initial implementation phase on 2026-10-17: local monorepo, frontend foundation, and Express health endpoint. Further phases require approval; authentication, persistence, multiplayer behavior, scoring, timers, elections, and deployment remain excluded.

@@ -10,7 +10,7 @@ Evidence labels used below:
 - **Inferred:** a plausible interpretation of static imagery, requiring validation.
 - **Proposed:** a new implementation or missing state, not part of the supplied design.
 
-The approved stack is React, TypeScript, Vite, Node.js, Express, Socket.IO, and SQLite. Approval of the stack does not authorize implementation in this task. Only documentation may change. Technical naming and documentation use English; visible application text uses Spanish, separated for future localization. No visual library is selected. No paid service, deployment, or external resource creation is authorized.
+The approved stack is React, TypeScript, Vite, Node.js, Express, Socket.IO, and SQLite. The original analysis was documentation-only. On 2026-10-17 the owner authorized the first implementation phase: local foundation, design primitives, home, navigation, and a mock host workspace. Further functionality remains pending approval. Technical naming and documentation use English; visible application text uses Spanish, separated for future localization. No visual library is selected. No paid service, deployment, or external resource creation is authorized.
 
 ## 2. Screenshot inventory and identified screens
 
@@ -85,7 +85,7 @@ Use semantic tokens so answer colors remain distinct from correctness: option D 
 | Results | `QuestionResults`, `AnswerDistribution`, `Scoreboard`, `Leaderboard`, `Podium`, `GameResults` | 13-14; full intermediate/all-player ranking missing. |
 | Continuity | `ReconnectionNotice`, `HostElectionModal`, `VotingPanel`, `PausedGameNotice` | Required new states, not observed. Use existing colors/cards/buttons and accessible dialog behavior. |
 
-Proposed frontend structure (documentation only; no folders created):
+Planned frontend structure (the initial implementation creates only modules needed for the authorized screens):
 
 ```text
 apps/web/src/
@@ -173,7 +173,7 @@ All supplied captures are desktop compositions; phone drawings/previews are not 
 7. Add host reconnection/election/pause flows; verify ties, no votes, return of old host, and repeated disconnects.
 8. Validate complete sessions on real phones and desktop, separate rooms, 20-player capacity, keyboard use, and visual consistency; update English technical documentation.
 
-Visual reconstruction and multiplayer correctness need separate checks. A matching screenshot cannot validate network behavior. No dependency installation, code, deployment, paid service, or screenshot edits are part of this task.
+Visual reconstruction and multiplayer correctness need separate checks. A matching screenshot cannot validate network behavior. The original analysis introduced no code or dependencies. The subsequently authorized initial phase adds local code and required dependencies; deployment, paid services, and screenshot edits remain excluded.
 
 ## 10. Risks and unresolved information
 
@@ -186,3 +186,10 @@ Visual reconstruction and multiplayer correctness need separate checks. A matchi
 - The common question duration's numeric value, pause/resume clock handling, scoring formula, answer-change policy, score ties, and progression controls are unresolved. The 20-second/1000-point examples do not establish defaults.
 - Capacity treatment of the host and disconnected/reconnecting players, room-code policy, late joins, session retention, and content permissions remain pending.
 - A local implementation can cover every visual flow and same-network multiplayer. Remote Internet access needs separately authorized infrastructure; no provider, domain, or free hosting guarantee is implied.
+
+
+## 11. Initial reconstruction implementation
+
+Implemented home sections from references 01?04 and a host workspace skeleton from 05, with mock data, reusable buttons/cards/inputs, inline SVG icons, and CSS-built device artwork. Values in `apps/web/src/styles/styles.css` are estimated, including colors, font stack, spacing, and the 640/960/1200/1600 px breakpoints; they are not recovered Figma tokens. Original screenshots are unchanged. Proposed small-screen adaptations stack the hero/cards and expose expandable public/host navigation. Unavailable actions are disabled and the workspace identifies example content. No theme toggle is offered because a complete alternate theme is not part of this phase.
+
+Visual browser comparison across viewports remains a separate manual acceptance check; successful HTTP responses and builds alone do not prove pixel fidelity or mobile usability. See README.md at the repository root for preview instructions.

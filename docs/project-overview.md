@@ -22,7 +22,7 @@ Source code, identifiers, project structure, technical comments, schemas, API en
 
 ## Current stage
 
-The project is in visual integration planning. The project owner has approved React, TypeScript, Vite, Node.js, Express, Socket.IO, and SQLite. Dependency installation, application scaffolding, and application code generation remain outside the current authorization.
+The project is in its first authorized implementation phase (owner approval: 2026-10-17). The npm workspace monorepo contains a React/TypeScript/Vite frontend, a minimal Express health endpoint, and a shared TypeScript contract package. The public landing page and responsive host workspace use example data. Authentication, persistence, multiplayer behavior, scoring, timers, elections, and deployment remain outside this phase. See ../README.md for local development commands.
 
 The only visual resources are 14 screenshots in `docs/design/`. No editable design or original code is available. See `design-integration.md` for the complete visual analysis, requirement comparison, component proposal, and implementation phases.
 
